@@ -110,7 +110,7 @@ class GPTLanguageModel(nn.Module):
         if targets is None:
             loss = None
         else:
-            # reshaping logits because of how pytorch expects B, C, T input for cross_entropy
+            # reshaping logits because pytorch expects [B, C, T] input for cross_entropy
             B, T, C = logits.shape
             logits = logits.view(B*T, C) # so that the channel dimension is second like how pytorch wants
             targets = targets.view(B*T)
