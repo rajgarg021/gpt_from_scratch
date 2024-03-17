@@ -62,7 +62,7 @@ def estimate_loss():
     return out
 
 class Head(nn.Module):
-    # one head of self-attention
+    """ one head of self-attention """
 
     def __init__(self, head_size):
         super().__init__()
